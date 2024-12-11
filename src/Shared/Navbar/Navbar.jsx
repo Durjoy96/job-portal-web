@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/Context";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-5">
@@ -76,12 +80,25 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end gap-6">
-            <Link to="/register" className="btn-link text-primary">
-              Register
-            </Link>
-            <Link className="btn bg-primary text-primary-content hover:bg-primary hover:opacity-70">
-              Sign in
-            </Link>
+            {user ? (
+              <>
+                <div className="flex items-center gap-6">
+                  <p className="truncate w-32">{user?.email}</p>
+                  <button className="px-6 py-2 bg-red-500 rounded-xl text-white font-semibold hover:opacity-70">
+                    Log Out
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link to="/register" className="btn-link text-primary">
+                  Register
+                </Link>
+                <Link className="btn bg-primary text-primary-content hover:bg-primary hover:opacity-70">
+                  Sign in
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

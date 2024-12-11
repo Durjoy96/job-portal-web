@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/Context";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, signOutUser } = useContext(AuthContext);
   console.log(user);
   return (
     <>
@@ -84,7 +84,10 @@ const Navbar = () => {
               <>
                 <div className="flex items-center gap-6">
                   <p className="truncate w-32">{user?.email}</p>
-                  <button className="px-6 py-2 bg-red-500 rounded-xl text-white font-semibold hover:opacity-70">
+                  <button
+                    onClick={signOutUser}
+                    className="px-6 py-2 bg-red-500 rounded-xl text-white font-semibold hover:opacity-70"
+                  >
                     Log Out
                   </button>
                 </div>

@@ -3,6 +3,7 @@ import { AuthContext } from "../Context/Context";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
@@ -16,6 +17,10 @@ const AuthProvider = ({ children }) => {
 
   const signOutUser = () => {
     return signOut(auth);
+  };
+
+  const loginUserWithEmail = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   useEffect(() => {
@@ -35,6 +40,7 @@ const AuthProvider = ({ children }) => {
     user,
     registerWithEmail,
     signOutUser,
+    loginUserWithEmail,
   };
   return (
     <>

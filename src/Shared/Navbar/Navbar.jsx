@@ -97,8 +97,11 @@ const Navbar = () => {
                 <Link to="/register" className="btn-link text-primary">
                   Register
                 </Link>
-                <Link className="btn bg-primary text-primary-content hover:bg-primary hover:opacity-70">
-                  Sign in
+                <Link
+                  to="/login"
+                  className="btn bg-primary text-primary-content hover:bg-primary hover:opacity-70"
+                >
+                  Log in
                 </Link>
               </>
             )}

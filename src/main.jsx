@@ -7,6 +7,7 @@ import Error from "./pages/Error";
 import MainLayout from "./MainLayout/MainLayout";
 import Register from "./pages/Auth/Reginster/Register";
 import AuthProvider from "./Provider/AuthProvider";
+import SignIn from "./pages/Auth/Login/SignIn.";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <SignIn></SignIn>,
       },
     ],
   },

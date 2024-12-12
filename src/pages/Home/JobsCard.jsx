@@ -22,8 +22,11 @@ const JobsCard = ({ job }) => {
             ))}
           </div>
           <div className="card-actions mt-3">
-            <Link className="btn-link text-primary hover:opacity-70">
-              Buy Now
+            <Link
+              to={`/job/${job._id}`}
+              className="btn-link text-primary hover:opacity-70"
+            >
+              Apply
             </Link>
           </div>
         </div>

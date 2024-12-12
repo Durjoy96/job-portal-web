@@ -10,6 +10,7 @@ import { auth } from "../Firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const registerWithEmail = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -27,8 +28,10 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        setLoading(false);
       } else {
         setUser(null);
+        setLoading(false);
       }
     });
 

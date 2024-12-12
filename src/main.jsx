@@ -8,6 +8,7 @@ import MainLayout from "./MainLayout/MainLayout";
 import Register from "./pages/Auth/Reginster/Register";
 import AuthProvider from "./Provider/AuthProvider";
 import SignIn from "./pages/Auth/Login/SignIn.";
+import Home from "./pages/Home/Home";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     element: <MainLayout></MainLayout>,
     errorElement: <Error></Error>,
     children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
       {
         path: "/register",
         element: <Register></Register>,

@@ -42,7 +42,7 @@ const Navbar = () => {
                   <NavLink to="/my-submission">My Submission</NavLink>
                 </li>
                 <li>
-                  <a>Item 3</a>
+                  <NavLink to="/add-job">Add Job</NavLink>
                 </li>
               </ul>
             </div>
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <NavLink to="/my-submission">My Submission</NavLink>
               </li>
               <li>
-                <a>Item 3</a>
+                <NavLink to="/add-job">Add job</NavLink>
               </li>
             </ul>
           </div>

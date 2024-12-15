@@ -6,4 +6,9 @@
   .apply-btn {
     @apply btn px-6 bg-primary text-base font-medium text-primary-content hover:bg-primary hover:opacity-70;
   }
+
+  .main-container {
+    @apply max-w-screen-xl mx-auto px-5
+  }
+
 }

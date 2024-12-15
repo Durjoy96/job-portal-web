@@ -44,6 +44,7 @@ const AuthProvider = ({ children }) => {
     registerWithEmail,
     signOutUser,
     loginUserWithEmail,
+    loading,
   };
   return (
     <>

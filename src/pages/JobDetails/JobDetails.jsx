@@ -9,6 +9,7 @@ const JobDetails = () => {
     location,
     applicationDeadline,
     salaryRange,
+    _id,
   } = useLoaderData();
   return (
     <>
@@ -38,7 +39,9 @@ const JobDetails = () => {
                 {salaryRange.min} - {salaryRange.max} {salaryRange.currency}
               </span>
             </p>
-            <Link className="apply-btn">Apply</Link>
+            <Link to={`/job/${_id}/apply`} className="apply-btn">
+              Apply
+            </Link>
           </div>
         </div>
       </div>

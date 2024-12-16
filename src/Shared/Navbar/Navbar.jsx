@@ -44,6 +44,9 @@ const Navbar = () => {
                 <li>
                   <NavLink to="/add-job">Add Job</NavLink>
                 </li>
+                <li>
+                  <NavLink to="/my-posts">My Posts</NavLink>
+                </li>
               </ul>
             </div>
             <a className="text-xl font-semibold">Job Portal</a>
@@ -57,7 +60,10 @@ const Navbar = () => {
                 <NavLink to="/my-submission">My Submission</NavLink>
               </li>
               <li>
-                <NavLink to="/add-job">Add job</NavLink>
+                <NavLink to="/add-job">Add Job</NavLink>
+              </li>
+              <li>
+                <NavLink to="/my-posts">My Posts</NavLink>
               </li>
             </ul>
           </div>

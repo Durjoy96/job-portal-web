@@ -18,6 +18,7 @@ const JobApply = () => {
       linkedin: linkedin,
       github: github,
       resume: resume,
+      status: "pending",
     };
 
     fetch("http://localhost:5000/job-applications", {

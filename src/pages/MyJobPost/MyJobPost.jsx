@@ -34,7 +34,10 @@ const MyJobPost = () => {
                 <td>{post.category}</td>
                 <td>{post.status}</td>
                 <td>
-                  <Link to="" className="link hover:text-primary">
+                  <Link
+                    to={`/job-applications/job/${post._id}`}
+                    className="link hover:text-primary"
+                  >
                     View Details
                   </Link>
                 </td>

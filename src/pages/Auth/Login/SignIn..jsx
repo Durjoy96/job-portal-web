@@ -3,6 +3,7 @@ import RegisterIcon from "../../../assets/LottieIcons/register.json";
 import { useContext } from "react";
 import { AuthContext } from "../../../Context/Context";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignIn = () => {
   const { loginUserWithEmail } = useContext(AuthContext);
@@ -14,12 +15,11 @@ const SignIn = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    loginUserWithEmail(email, password)
-      .then((res) => {
-        navigate(location?.state?.from);
-        console.log(res);
-      })
-      .catch((error) => console.log(error.message));
+    loginUserWithEmail(email, password).then((res) => {
+      // navigate(location?.state?.from);
+      // console.log(res);
+    });
+    // .catch((error) => console.log(error.message));
   };
   return (
     <>

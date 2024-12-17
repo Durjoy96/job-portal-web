@@ -7,7 +7,7 @@ const AddJob = () => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    console.log(Object.fromEntries(formData.entries()));
+    // console.log(Object.fromEntries(formData.entries()));
     const initial = Object.fromEntries(formData.entries());
     const { min, max, currency, ...job } = initial;
     job.salaryRange = { min: Number(min), max: Number(max), currency };
@@ -16,7 +16,7 @@ const AddJob = () => {
     job.status = "active";
     job.hr_email = user?.email;
     job.hr_name = user?.displayName || "Anonymous";
-    console.log(job);
+    // console.log(job);
     form.reset();
     fetch("http://localhost:5000/jobs", {
       method: "POST",
@@ -26,7 +26,7 @@ const AddJob = () => {
       body: JSON.stringify(job),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      // .then((data) => console.log(data));
   };
   return (
     <>

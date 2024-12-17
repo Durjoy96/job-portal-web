@@ -1,17 +1,23 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/Context";
+import axios from "axios";
 
 const MySubmission = () => {
   const { user } = useContext(AuthContext);
   const [submissions, setSubmissions] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/job-applications/${user?.email}`)
+    /*     fetch(`http://localhost:5000/job-applications/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setSubmissions(data));
+      .then((data) => setSubmissions(data)); */
+    axios
+      .get(`http://localhost:5000/job-applications/${user?.email}`, {
+        withCredentials: true,
+      })
+      .then((res) => setSubmissions(res.data));
   }, []);
 
-  console.log(submissions, console.log(user.email));
+  // console.log(submissions, console.log(user.email));
   return (
     <>
       <div className="overflow-x-auto">

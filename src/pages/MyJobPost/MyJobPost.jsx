@@ -10,7 +10,7 @@ const MyJobPost = () => {
       .then((res) => res.json())
       .then((data) => setPosts(data));
   }, []);
-  console.log(posts);
+  // console.log(posts);
   return (
     <>
       <div className="overflow-x-auto main-container mt-12 bg-base-100 p-12 rounded-xl shadow-sm">

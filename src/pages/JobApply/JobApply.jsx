@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/Context";
 const JobApply = () => {
   const params = useParams();
   const { user } = useContext(AuthContext);
-  console.log(params.id);
+  // console.log(params.id);
   const formHandler = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,7 +29,7 @@ const JobApply = () => {
       body: JSON.stringify(application),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      // .then((data) => console.log(data));
   };
   return (
     <>

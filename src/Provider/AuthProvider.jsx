@@ -7,6 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
+import axios from "axios";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -29,9 +30,16 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         setUser(currentUser);
         setLoading(false);
+        const user = { email: currentUser.email };
+        axios
+          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .then((res) => console.log(res.data));
       } else {
         setUser(null);
         setLoading(false);
+        axios
+          .post("http://localhost:5000/logout", {}, { withCredentials: true })
+          .then((res) => console.log(res.data));
       }
     });
 

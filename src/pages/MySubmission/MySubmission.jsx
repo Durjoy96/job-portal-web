@@ -1,19 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/Context";
 import axios from "axios";
+import UseAxiosSecure from "../../hooks/UseAxiosSecure";
 
 const MySubmission = () => {
   const { user } = useContext(AuthContext);
   const [submissions, setSubmissions] = useState([]);
+  const axiosSecure = UseAxiosSecure();
 
   useEffect(() => {
     /*     fetch(`http://localhost:5000/job-applications/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setSubmissions(data)); */
-    axios
-      .get(`http://localhost:5000/job-applications/${user?.email}`, {
-        withCredentials: true,
-      })
+    axiosSecure
+      .get(`/job-applications/${user?.email}`)
       .then((res) => setSubmissions(res.data));
   }, []);
 
